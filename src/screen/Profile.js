@@ -5,6 +5,7 @@ import {
   Text,
   TextInput,
   Image,
+  ScrollView,
 } from "react-native";
 
 const image = {
@@ -13,7 +14,7 @@ const image = {
 
 export default function Profile() {
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
       <ImageBackground source={image} resizeMode="cover" style={styles.photo}>
         <Text style={styles.textTitle}>Profile</Text>
         <View>
@@ -50,21 +51,19 @@ export default function Profile() {
           <TextInput style={styles.textInput} placeholder="Email" />
         </View>
       </ImageBackground>
-    </View>
+    </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: "center",
-    justifyContent: "space-around",
   },
   photo: {
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    height: "100%",
+    height: 750,
     width: "100%",
   },
   containerImage: {
@@ -73,7 +72,6 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   textInput: {
-    color: "red",
     fontSize: 20,
     height: 40,
     width: 175,

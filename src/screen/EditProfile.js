@@ -8,6 +8,7 @@ import {
   Image,
   Button,
   Alert,
+  ScrollView,
 } from "react-native";
 
 const conchudo = {
@@ -16,7 +17,7 @@ const conchudo = {
 
 export default function Profile() {
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
       <ImageBackground
         source={conchudo}
         resizeMode="cover"
@@ -59,26 +60,24 @@ export default function Profile() {
             styles={styles.textButton}
             color="#000"
             title="Submit Changes"
-            onPress={() => Alert.alert("NAZHEEEEEEE !!!")}
+            onPress={() => Alert.alert("Changes Made")}
           />
         </View>
       </ImageBackground>
       <StatusBar style="auto" />
-    </View>
+    </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: "center",
-    justifyContent: "space-around",
   },
   photo: {
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    height: "100%",
+    height: 735,
     width: "100%",
   },
   containerImage: {
@@ -87,7 +86,6 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   textInput: {
-    color: "red",
     fontSize: 20,
     MinHeight: 40,
     width: 175,

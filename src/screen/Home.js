@@ -20,6 +20,9 @@ export default function Home() {
 }
 
 const styles = StyleSheet.create({
+  contedor: {
+    height: "100%",
+  },
   text: {
     fontSize: 80,
     color: "black",
@@ -30,8 +33,6 @@ const styles = StyleSheet.create({
   },
   textTitle2: {
     fontSize: 40,
-    color: "#ff7f50",
-    fontWeight: "bold",
   },
   image: {
     display: "flex",
