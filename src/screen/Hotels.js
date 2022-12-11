@@ -1,4 +1,4 @@
-import { StyleSheet, View, Text, Image, Button } from "react-native";
+import { StyleSheet, View, Text, Image, Button, TextInput } from "react-native";
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { FlatList } from "react-native-gesture-handler";
@@ -7,12 +7,11 @@ import { useNavigation } from "@react-navigation/native";
 
 export default function Hotels() {
   const navigation = useNavigation();
-
   const hotelList = useSelector((store) => store.hotelsReducers.listsHotels);
   const dispatch = useDispatch();
   const [search, setSearch] = useState("");
   const [order, setOrder] = useState("asc");
-
+  console.log(search);
   useEffect(() => {
     dispatch(hotelActions.getHotels());
   }, []);
@@ -23,7 +22,7 @@ export default function Hotels() {
     };
     dispatch(hotelActions.getHotelsFilters(filter));
   }, [search, order]);
-
+  console.log(search);
   const Item = ({ name, img }) => (
     <>
       <View>
@@ -49,7 +48,7 @@ export default function Hotels() {
                 styles={styles.textButton}
                 color="#000"
                 title="Enter"
-                onPress={() => navigation.navigate("City")}
+                onPress={() => navigation.navigate("Show")}
               />
             </View>
           </View>
@@ -60,11 +59,28 @@ export default function Hotels() {
 
   const CityCard = ({ item }) => <Item name={item.name} img={item.photo[0]} />;
   return (
-    <FlatList
-      data={hotelList}
-      renderItem={CityCard}
-      keyExtractor={(item) => item.id}
-    />
+    <>
+      <View>
+        <TextInput
+          style={{
+            height: 40,
+            borderColor: "#172A3A",
+            borderWidth: 1,
+            marginVertical: 8,
+            marginHorizontal: 16,
+            borderdRadius: 10,
+          }}
+          placeholder="Search..."
+          type="search"
+          onChangeText={(text) => setSearch(text)}
+        ></TextInput>
+      </View>
+      <FlatList
+        data={hotelList}
+        renderItem={CityCard}
+        keyExtractor={(item) => item.id}
+      />
+    </>
   );
 }
 

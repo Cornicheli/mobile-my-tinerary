@@ -14,7 +14,7 @@ const image = {
   uri: "https://wallpapers.com/images/file/omnia-night-club-bar-party-d17al9m73c3im6oe.jpg",
 };
 
-export default function City() {
+export default function Show() {
   const navigation = useNavigation();
 
   return (
