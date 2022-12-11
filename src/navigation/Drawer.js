@@ -9,7 +9,7 @@ import SignUp from "../screen/SignUp";
 import Hotels from "../screen/Hotels";
 import Profile from "../screen/Profile";
 import EditProfile from "../screen/EditProfile";
-import City from "../screen/City";
+import Show from "../screen/Show";
 import { StyleSheet, View, Text } from "react-native";
 import MenuButtonItem from "../components/MenuButtonItem";
 import Footer from "../layout/Footer";
@@ -26,7 +26,7 @@ export default function Drawer() {
         <DrawerNav.Screen name="Hotels" component={Hotels} />
         <DrawerNav.Screen name="Profile" component={Profile} />
         <DrawerNav.Screen name="EditProfile" component={EditProfile} />
-        <DrawerNav.Screen name="City" component={City} />
+        <DrawerNav.Screen name="Show" component={Show} />
       </DrawerNav.Navigator>
       <View></View>
     </>
@@ -76,8 +76,8 @@ const MenuItems = ({ navigation }) => {
 
         <Text style={style.title}> </Text>
         <MenuButtonItem
-          text="City"
-          onPress={() => navigation.navigate("City")}
+          text="Show"
+          onPress={() => navigation.navigate("Show")}
         />
       </DrawerContentScrollView>
       <Footer />
